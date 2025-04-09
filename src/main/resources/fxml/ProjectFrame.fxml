@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23" fx:controller="com.project.controller.ProjectController">
+	<!-- Górny panel: wyszukiwanie i dodawanie -->
+	<top>
+		<HBox spacing="10">
+			<padding>
+				<Insets top="10" right="10" bottom="10" left="10"/>
+			</padding>
+			<TextField fx:id="txtSzukaj" promptText="Wyszukaj..." />
+			<Button text="Szukaj" onAction="#onActionBtnSzukaj" />
+			<Label text="Rozmiar strony:" />
+			<ChoiceBox fx:id="cbPageSizes" />
+			<Button text="Dodaj" onAction="#onActionBtnDodaj" />
+		</HBox>
+	</top>
+
+	<!-- Środkowy panel: tabela -->
+	<center>
+		<TableView fx:id="tblProjekt" prefHeight="400">
+			<columns>
+				<TableColumn fx:id="colId" text="Id" />
+				<TableColumn fx:id="colNazwa" text="Nazwa" />
+				<TableColumn fx:id="colOpis" text="Opis" />
+				<TableColumn fx:id="colDataCzasUtworzenia" text="Data utworzenia" />
+				<TableColumn fx:id="colDataOddania" text="Data oddania" />
+			</columns>
+		</TableView>
+	</center>
+
+	<!-- Dolny panel: paginacja -->
+	<bottom>
+		<HBox spacing="10" alignment="CENTER">
+			<padding>
+				<Insets top="10" right="10" bottom="10" left="10"/>
+			</padding>
+			<Button fx:id="btnPierwsza" text="⏮" onAction="#onActionBtnPierwsza"/>
+			<Button fx:id="btnWstecz" text="◀" onAction="#onActionBtnWstecz"/>
+			<Label fx:id="lblStrona" text="Strona 1" />
+			<Button fx:id="btnDalej" text="▶" onAction="#onActionBtnDalej"/>
+			<Button fx:id="btnOstatnia" text="⏭" onAction="#onActionBtnOstatnia"/>
+		</HBox>
+	</bottom>
+</BorderPane>
